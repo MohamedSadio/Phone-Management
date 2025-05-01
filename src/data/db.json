@@ -1,0 +1,33 @@
+{
+    "smartphones": [
+      {
+        "id": 1,
+        "nom": "iPhone 14 Pro",
+        "marque": "Apple",
+        "description": "Dernier modèle haut de gamme d'Apple",
+        "prix": 1299,
+        "photo": "url_de_la_photo.jpg",
+        "ram": "6 Go",
+        "rom": "256 Go",
+        "ecran": "6.1 pouces",
+        "couleursDisponibles": ["Noir", "Argent", "Or", "Bleu"]
+      },
+      {
+        "id": 2,
+        "nom": "Galaxy S22",
+        "marque": "Samsung"
+      }
+    ],
+    "utilisateurs": [
+      {
+        "id": 1,
+        "nom": "Admin",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "nom": "Utilisateur",
+        "role": "simple"
+      }
+    ]
+  }
