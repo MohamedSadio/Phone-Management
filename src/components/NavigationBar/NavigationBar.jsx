@@ -13,7 +13,7 @@ function NavigationBar() {
             <div className='flex flex-wrap items-center gap-10'>
                 {/*Nav items */}
                 <ul className='flex gap-14 text-gray-600 hover:text-black'>
-                    <li> All phones</li>
+                    <li> All phones </li>
                 </ul>
             </div>
             <div className='flex justify-center'>

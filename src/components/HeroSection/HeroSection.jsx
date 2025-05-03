@@ -1,9 +1,9 @@
 import React from 'react'
-import PhoneHeroImgage from './../../assets/images/PhoneHeroImage.jpg'
+import PhoneHeroImgage from './../../assets/images/PhoneHeroImage2.jpg'
 
 const HeroSection = () => {
   return (
-    <div className='relative flex items-center bg-cover bg-center text-left w-full' style={{
+    <div className='relative flex items-center bg-cover bg-center text-left w-full h-280px' style={{
       backgroundImage: `url(${PhoneHeroImgage})`,
       height: 'calc(100vh - 80px)' // Ajustez selon la hauteur de votre navbar
     }}>
@@ -16,7 +16,7 @@ const HeroSection = () => {
           </h1>
           
           <button className='mt-6 py-3 px-8 border rounded border-black hover:bg-white hover:text-black hover:border-black text-white bg-black transition duration-300'>
-            Shop Now
+            Check now
           </button>
         </div>
       </div>
