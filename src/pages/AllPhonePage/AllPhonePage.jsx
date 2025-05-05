@@ -1,10 +1,11 @@
 import React from 'react'
+import PhoneCard from '../../components/Card/PhoneCard'
 
 const AllPhonePage = () => {
   return (
     <>
         <div>
-            <p>All phones</p>
+            <PhoneCard/>
         </div>
     </>
   )

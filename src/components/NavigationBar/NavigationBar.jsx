@@ -1,6 +1,7 @@
 import React from 'react'
 import Wishlist from '../common/Wishlist';
 import AccountIcon from '../common/AccountIcon';
+import { NavLink } from 'react-router-dom';
 
 function NavigationBar() {
   return (
@@ -13,7 +14,7 @@ function NavigationBar() {
             <div className='flex flex-wrap items-center gap-10'>
                 {/*Nav items */}
                 <ul className='flex gap-14 text-gray-600 hover:text-black'>
-                    <li> All phones </li>
+                    <li><NavLink to='/allPhones'> All phones</NavLink> </li>
                 </ul>
             </div>
             <div className='flex justify-center'>
