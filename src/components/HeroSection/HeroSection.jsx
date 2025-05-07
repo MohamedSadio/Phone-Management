@@ -1,5 +1,6 @@
 import React from 'react'
 import PhoneHeroImgage from './../../assets/images/PhoneHeroImage2.jpg'
+import { NavLink } from 'react-router-dom'
 
 const HeroSection = () => {
   return (
@@ -16,7 +17,7 @@ const HeroSection = () => {
           </h1>
           
           <button className='mt-6 py-3 px-8 border rounded border-black hover:bg-white hover:text-black hover:border-black text-white bg-black transition duration-300'>
-            Check now
+            <NavLink to="/allPhones">Check now</NavLink> 
           </button>
         </div>
       </div>
