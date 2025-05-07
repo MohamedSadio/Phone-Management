@@ -130,7 +130,7 @@ const PhoneDetailPage = () => {
                 {smartphone.couleursDisponibles.map((couleur, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm"
+                    className="px-5 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer"
                   >
                     {couleur}
                   </span>
