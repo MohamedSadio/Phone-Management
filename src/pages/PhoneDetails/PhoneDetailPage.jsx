@@ -1,23 +1,47 @@
-import React from 'react';
-import { useParams, useNavigate, useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const PhoneDetailPage = () => {
   const { phoneId } = useParams();
   const navigate = useNavigate();
+  const [smartphone, setSmartphone] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   
-  // Récupération des données du loader
-  const data = useLoaderData();
-  // Extraction du smartphone depuis la structure { smartphone: ... }
-  const smartphone = data?.smartphone;
-  
-  // Débogage
-  console.log("Phone ID from URL:", phoneId);
-  console.log("Data from loader:", data);
-  console.log("Smartphone data:", smartphone);
+  useEffect(() => {
+    // Récupération des données avec axios
+    axios.get(`http://localhost:3001/smartphones/${phoneId}`)
+      .then(res => {
+        setSmartphone(res.data);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error("Erreur lors de la récupération du smartphone:", err);
+        setError(err);
+        setIsLoading(false);
+      });
+  }, [phoneId]);
 
   // Si les données sont en cours de chargement
-  if (data === undefined) {
+  if (isLoading) {
     return <div className="p-8 text-center">Chargement en cours...</div>;
+  }
+
+  // Si une erreur s'est produite
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
+        <h2 className="text-2xl font-bold text-red-600 mb-4">Erreur</h2>
+        <p className="text-lg mb-6">Une erreur s'est produite lors du chargement des données.</p>
+        <button
+          onClick={() => navigate(-1)}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Retour
+        </button>
+      </div>
+    );
   }
 
   // Handle case when smartphone is not found
@@ -138,8 +162,6 @@ const PhoneDetailPage = () => {
               </div>
             </div>
           )}
-          
-          
         </div>
       </div>
     </div>
